@@ -1,0 +1,55 @@
+/*
+selector {
+  property: value;
+  property: value;
+}
+*/
+
+body {
+  color: yellow;
+  background-color: black;
+}
+
+/* Pseudoclass / pseudoselector */
+h1:hover {
+  text-shadow: 0 0 30px white;
+}
+
+p {
+  text-decoration: underline;
+}
+
+/* ID Selector: # */
+#welcome {
+  color: green;
+}
+
+/* Class selector: . */
+.warning {
+  border: 3px dashed red;
+}
+
+li.hero {
+  font-weight: bold;
+}
+
+/* Selecting multiple classes */
+.warning.hero {
+  font-size: 200%;
+}
+
+a:link { /* unvisited link */
+  color: red;
+}
+a:visited { /* visited link */
+  color: blue;
+}
+a:hover { /* moused over link */
+  color: white;
+}
+a:active { /* current link */
+  color: pink;
+}
+a:focus {  /* focused link */
+  color: purple;
+}
