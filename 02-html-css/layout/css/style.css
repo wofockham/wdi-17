@@ -1,0 +1,57 @@
+/*
+* {
+  box-sizing: border-box;
+}
+*/
+
+body {
+  background-color: #444;
+}
+
+a {
+  color: black;
+}
+
+.container {
+  background-color: white;
+  max-width: 960px;
+  margin: 0 auto; /* Variadic: in this case we are centering */
+  padding: 1em;
+  border-radius: 5px;
+}
+
+nav {
+  text-align: right;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 587%;
+  letter-spacing: -8px;
+  margin: 0;
+}
+
+.main {
+  display: inline-block;
+  width: 70%;
+  margin-right: 3em;
+  vertical-align: top;
+}
+
+.main img {
+  width: 100%;
+  border-radius: 5px;
+}
+aside {
+  display: inline-block;
+  width: 24%;
+  background-color: #ccc;
+}
+
+aside ul {
+  padding-left: 28px;
+}
+
+aside li {
+  margin-bottom: 1em;
+}
