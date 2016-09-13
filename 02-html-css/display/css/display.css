@@ -1,3 +1,11 @@
+.vanish {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
 * {
   border: 1px solid green;
 }
