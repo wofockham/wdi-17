@@ -1,0 +1,35 @@
+body {
+  font-size: 200%;
+  height: 1000em;
+}
+
+* {
+  border: 1px solid green;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+}
+
+.static {
+  position: static; /* This is the default */
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+  right: 150px;
+  top: 200px;
+}
+
+.fixed {
+  position: fixed; /* relative to the window */
+  right: 150px;
+  top: 200px;
+}
