@@ -1,0 +1,39 @@
+body {
+  background-color: green;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-top: 4em;
+}
+
+.wheel {
+  text-align: center;
+  width: 30%;
+  display: inline-block;
+  background-color: white;
+  border: 5px solid black;
+  font-size: 1400%;
+  line-height: 350px;
+}
+
+.controls {
+  padding: 5em;
+  text-align: center;
+}
+
+.controls button {
+  font-size: 250%;
+  padding: 1em;
+  margin: 0.5em;
+  border-radius: 0.5em;
+}
+
+.winner, .loser {
+  display: none;
+  text-align: center;
+  font-size: 1800%;
+  color: yellow;
+  line-height: 0.7;
+}
