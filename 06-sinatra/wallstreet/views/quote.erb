@@ -1,0 +1,7 @@
+<p>
+  <% if @price == 0 %>
+    <%= @symbol %> stock not found
+  <% else %>
+    <%= @symbol %> last traded at $<%= @price %>
+  <% end %>
+</p>
