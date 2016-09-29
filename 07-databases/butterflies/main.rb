@@ -17,6 +17,17 @@ get '/butterflies' do
   erb :butterflies_index
 end
 
+get '/butterflies/new' do
+  erb :butterflies_new
+end
+
 get '/butterflies/:id' do
-  "You will soon be viewing butterfly #{ params[:id] }"
+  # Fetch this specific butterfly from the DB
+  db = SQLite3::Database.new 'butterflies.db'
+  db.results_as_hash = true
+
+  @butterfly = db.execute "SELECT * FROM butterflies WHERE id = #{ params['id'] }"
+  @butterfly = @butterfly.first
+
+  erb :butterflies_show
 end
