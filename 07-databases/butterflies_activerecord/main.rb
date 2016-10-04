@@ -18,6 +18,9 @@ class Plant < ActiveRecord::Base
   has_many :butterflies
 end
 
+require 'pry'
+binding.pry
+
 get '/' do
   erb :home
 end
