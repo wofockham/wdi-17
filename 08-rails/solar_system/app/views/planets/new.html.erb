@@ -1,0 +1,28 @@
+<form action="/planets" method="post">
+  <p>
+    <label for="name">Name:</label>
+    <input type="text" name="planet[name]" id="name" placeholder="Earth">
+  </p>
+  <p>
+    <label for="image">Image:</label>
+    <input type="url" name="planet[image]" id="image" placeholder="http://fillmurray.com/500/500">
+  </p>
+  <p>
+    <label for="orbit">Orbit:</label>
+    <input type="number" name="planet[orbit]" id="orbit" placeholder="7.2">
+  </p>
+  <p>
+    <label for="diameter">Diameter:</label>
+    <input type="number" name="planet[diameter]" id="diameter" placeholder="50000">
+  </p>
+  <p>
+    <label for="mass">Mass:</label>
+    <input type="number" name="planet[mass]" id="mass" placeholder="600000">
+  </p>
+  <p>
+    <label for="moons">Moons:</label>
+    <input type="number" name="planet[moons]" id="moons" placeholder="7">
+  </p>
+
+  <button>Create planet!</button>
+</form>
