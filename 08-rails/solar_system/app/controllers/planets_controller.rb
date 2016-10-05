@@ -11,6 +11,16 @@ class PlanetsController < ApplicationController
     redirect_to planets_path
   end
 
+  def show
+    @planet = Planet.find params[:id]
+  end
+
+  def destroy
+    planet = Planet.find params[:id]
+    planet.destroy
+    redirect_to planets_path
+  end
+
   private
   def planet_params # Strong Parameters
     params.require(:planet).permit(:name, :image, :orbit, :diameter, :mass, :moons)

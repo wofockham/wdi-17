@@ -1,0 +1,9 @@
+<h1><%= @planet.name %></h1>
+
+<%= image_tag @planet.image, :class => 'feature' %>
+
+<!-- TODO: Show the other attributes -->
+
+<div class="controls">
+  <%= button_to 'Delete planet', planet_delete_path(@planet.id) %>
+</div>
