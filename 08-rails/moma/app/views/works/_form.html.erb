@@ -24,5 +24,10 @@
     <%= f.url_field :image %>
   </p>
 
+  <p>
+    <%= f.label :artist_id %>
+    <%= f.select :artist_id, Artist.pluck(:name, :id), :include_blank => true, :prompt => 'Select artist' %>
+  </p>
+
   <%= f.submit %>
 <% end %>

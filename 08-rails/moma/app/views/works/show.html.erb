@@ -1,4 +1,6 @@
 <h1><%= @work.title %></h1>
+<h2><em><%= link_to @work.artist.name, @work.artist if @work.artist %></em></h2>
+
 <%= image_tag(@work.image, :class => 'feature') %>
 <!-- TODO Show other database columns here -->
 
