@@ -4,6 +4,11 @@
   <li><%= image_tag @artist.image, :class => 'feature' %></li>
   <li><%= @artist.name %></li>
   <li><%= @artist.nationality %></li>
-  <li><%= @artist.dob.strftime '%A, %e %B, %Y' %></li>
+  <li><%= @artist.dob.strftime '%A, %e %B, %Y' if @artist.dob %></li>
   <li><%= @artist.period %></li>
 </ul>
+
+<div class="controls">
+  <%= link_to 'Edit artist', edit_artist_path(@artist) %>
+  <%= link_to 'Delete artist', @artist, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+</div>
