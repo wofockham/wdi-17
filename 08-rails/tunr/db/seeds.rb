@@ -19,9 +19,9 @@ s2 = Song.create :name => 'Expect Delays'
 s3 = Song.create :name => 'Toxic'
 
 User.destroy_all
-u1 = User.create :email => 'jonesy@gmail.com', :name => 'Jonesy'
-u2 = User.create :email => 'cragisy@gmail.com', :name => 'Craigsy'
-u3 = User.create :email => 'bessy@gmail.com', :name => 'Bessy'
+u1 = User.create :email => 'jonesy@gmail.com', :name => 'Jonesy', :password => 'chicken', :password_confirmation => 'chicken'
+u2 = User.create :email => 'cragisy@gmail.com', :name => 'Craigsy', :password => 'chicken', :password_confirmation => 'chicken'
+u3 = User.create :email => 'bessy@gmail.com', :name => 'Bessy', :password => 'chicken', :password_confirmation => 'chicken'
 
 Mixtape.destroy_all
 m1 = Mixtape.create :title => 'Code Jams'
