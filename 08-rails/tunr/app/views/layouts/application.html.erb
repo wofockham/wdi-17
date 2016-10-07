@@ -8,6 +8,12 @@
 </head>
 <body>
 
+<nav>
+  <%= link_to 'Home', root_path %>
+  <%= link_to 'Sign up', new_user_path %>
+  You are currently signed in as <%= @current_user.email %>
+</nav>
+
 <%= yield %>
 
 </body>
