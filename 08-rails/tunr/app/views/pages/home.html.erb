@@ -1,6 +1,19 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
+<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+
 <% if @current_user.present? && @current_user.admin? %>
   <%= image_tag 'http://fillmurray.com/50/50' %>
 <% end %>
+
+<div class="row">
+  <div class="col-md-7">
+    <h1>Royal Family Related To Reptiles</h1>
+  </div>
+
+  <div class="col-md-5">
+    <h2>Kate's Cheeky Outing</h2>
+    <h2>Phwoar! What A Scorcher!</h2>
+  </div>
+</div>
