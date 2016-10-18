@@ -1,13 +1,16 @@
-var xhr = new XMLHttpRequest();
-
 $(document).ready(function () {
   $('#movie_search').on('submit', function (e) {
     e.preventDefault();
 
-    // Your code goes here
+    var title = $('#title').val();
 
-    // Get the title entered by the user
     // Request data on that title from omdb
-    // Update the page to show the poster
+    var url = 'http://omdbapi.com/?t=' + title;
+
+    $.ajax(url).done(function (info) {
+      var $img = $('<img>', {src: info['Poster'], title: info['Title']});
+      $img.prependTo('#posters');
+    });
+
   });
 });
