@@ -1,4 +1,5 @@
 var searchFlickr = function (query) {
+  console.log('fetching more images');
   var flickrURL = 'https://api.flickr.com/services/rest/?jsoncallback=?';
 
   $.getJSON(flickrURL, {
@@ -9,7 +10,8 @@ var searchFlickr = function (query) {
   }).done(function (results) {
     _(results.photos.photo).each(function (p) {
       var url = generateURL(p);
-      console.log(url);
+      var $img = $('<img>', {src: url});
+      $img.appendTo('#images');
     })
   });
 };
@@ -36,5 +38,13 @@ $(document).ready(function () {
     var query = $('#query').val();
     searchFlickr(query);
 
+  });
+
+  $(window).on('scroll', function () {
+    var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
+    if (scrollBottom <= 800) {
+      var query = $('#query').val();
+      searchFlickr(query);
+    }
   });
 });
