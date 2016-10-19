@@ -1,5 +1,4 @@
 var searchFlickr = function (query) {
-  console.log('fetching more images');
   var flickrURL = 'https://api.flickr.com/services/rest/?jsoncallback=?';
 
   $.getJSON(flickrURL, {
