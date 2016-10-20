@@ -102,3 +102,44 @@ var counts = _(data).countBy(function (n) {
 });
 
 console.log(counts);
+
+_.compact([0, 1, false, 2, '', 3]); // => [1, 2, 3]
+
+_.flatten([1, [2], [3, [[4]]]]); // => [1, 2, 3, 4];
+_.flatten([1, [2], [3, [[4]]]], true); // => [1, 2, 3, [[4]]];
+
+_.without([1, 2, 1, 0, 3, 1, 4], 0, 1);
+// => [2, 3, 4]
+
+_.union([1, 2, 3], [101, 2, 1, 10], [2, 1]);
+// => [1, 2, 3, 101, 10] - all unique items
+
+_.intersection([1, 2, 3], [101, 2, 1, 10], [2, 1]);
+// => [1, 2] - all items that are present in all arrays
+
+_.difference([1, 2, 3, 4, 5], [5, 2, 10]);
+// => [1, 3, 4] - all items that are present in the first array and nowhere else
+
+_.zip(['moe', 'larry', 'curly'], [30, 40, 50], [true, false, false]);
+// => [["moe", 30, true], ["larry", 40, false], ["curly", 50, false]]
+
+_.unzip([['moe', 30, true], ["larry", 40, false], ["curly", 50, false]])
+// => [['moe', 'larry', 'curly'], [30, 40, 50], [true, false, false]]
+
+_.object(['moe', 'larry', 'curly'], [30, 40, 50]);
+// => {moe: 30, larry: 40, curly: 50}
+
+_.object([['moe', 30], ['larry', 40], ['curly', 50]]);
+// => {moe: 30, larry: 40, curly: 50}
+
+_.range(10);
+// => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+_.range(1, 11);
+// => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+_.range(0, 30, 5);
+// => [0, 5, 10, 15, 20, 25]
+
+_.range(0, -10, -1);
+// => [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
