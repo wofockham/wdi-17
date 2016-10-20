@@ -37,5 +37,27 @@ var gaZoo = new Zoo( [ f, t, b ] );
 
 // Views: //////////////////////////////////////////////////////////////////////
 var ZooView = Backbone.View.extend({
+  el: '#main', // jQuery style selector for where this should appear on the page.
+  events: {
+    'click h2': 'thanker'
+  },
+  initialize: function () {
+    console.log('view is initialized');
+  },
+  thanker: function () {
+    alert('Thank you for clicking');
+  },
+  render: function () {
+    var view = this; // Give `this` a sensible name while we know what it is.
+    view.collection.each(function (animal) {
+      var name = animal.get('name');
+      var $h2 = $('<h2/>').text(name); // TODO: Templates
+      view.$el.append( $h2 );
+    });
+  }
+});
 
-})
+$(document).ready(function () {
+  var v = new ZooView({collection: gaZoo});
+  v.render();
+});
