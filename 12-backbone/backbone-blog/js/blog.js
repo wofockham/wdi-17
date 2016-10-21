@@ -25,15 +25,60 @@ var posts = new Posts([
 ]);
 
 
+var Router = Backbone.Router.extend({
+  routes: {
+    '': 'index',
+    'posts/:id': 'show'
+  },
+  index: function () {
+    var appView = new AppView({collection: posts});
+    appView.render();
+  },
+  show: function (id) {
+    var post = posts.get(id);
+    var postView = new PostView({model: post});
+    postView.render();
+  }
+});
+
+
 var AppView = Backbone.View.extend({
   el: '#main',
   render: function () {
     var appViewTemplate = $('#appView').html();
     this.$el.html( appViewTemplate );
+    this.collection.each(function (p) {
+      var postListView = new PostListView({model: p});
+      postListView.render();
+    });
   }
 });
 
+var PostListView = Backbone.View.extend({
+  tagName: 'li',
+  events: {
+    'click': 'showPost'
+  },
+  showPost: function () {
+    router.navigate('posts/' + this.model.get('id'), true);
+  },
+  render: function () {
+    this.$el.text( this.model.get('title') );
+    this.$el.appendTo('#posts');
+  }
+});
+
+var PostView = Backbone.View.extend({
+  el: '#main',
+  render: function () {
+    var postTemplate = $('#postView').html();
+    var postMaker = _.template(postTemplate);
+    this.$el.html( postMaker(this.model.toJSON()) );
+  }
+});
+
+var router = new Router();
+
 $(document).ready(function () {
-  var appView = new AppView();
-  appView.render();
+  Backbone.history.start();
 });
