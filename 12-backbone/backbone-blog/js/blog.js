@@ -1,4 +1,6 @@
+// MODELS //////////////////////////////////////////////////////////////////////
 var Post = Backbone.Model.extend({
+  // Documents the shape of a typical post
   defaults: {
     author: 'Anonymous',
     title: 'Untitled',
@@ -6,11 +8,13 @@ var Post = Backbone.Model.extend({
   }
 });
 
+// Gives us something like an ActiveRecord Relation/Set
+// A place to store a bunch of posts with some bonus methods like .get() and .pluck()
 var Posts = Backbone.Collection.extend({
   model: Post
 });
 
-// seeds.rb
+// seeds.rb: TODO: move these posts to an actual server side database
 var posts = new Posts([
   new Post({
     id: 1,
@@ -24,7 +28,10 @@ var posts = new Posts([
   })
 ]);
 
-
+// ROUTER //////////////////////////////////////////////////////////////////////
+// A mad combination of router and controller
+// The router connects a URL with some particular function.
+// The router keeps track of the state of the application in the hash fragment.
 var Router = Backbone.Router.extend({
   routes: {
     '': 'index',
@@ -41,12 +48,15 @@ var Router = Backbone.Router.extend({
   }
 });
 
-
+// VIEW ////////////////////////////////////////////////////////////////////////
+// A view shows some particular data AND handles any events to allow interaction
 var AppView = Backbone.View.extend({
   el: '#main',
   render: function () {
+    // Set up the page
     var appViewTemplate = $('#appView').html();
     this.$el.html( appViewTemplate );
+    // Create a new view for each of the posts.
     this.collection.each(function (p) {
       var postListView = new PostListView({model: p});
       postListView.render();
@@ -60,6 +70,9 @@ var PostListView = Backbone.View.extend({
     'click': 'showPost'
   },
   showPost: function () {
+    // We navigate to a specific URL so that we can share the URL
+    // and our friends will see the same content we were looking at.
+    // We can also bookmark a specifc URL to return to a specific state.
     router.navigate('posts/' + this.model.get('id'), true);
   },
   render: function () {
@@ -71,14 +84,17 @@ var PostListView = Backbone.View.extend({
 var PostView = Backbone.View.extend({
   el: '#main',
   render: function () {
+    // Review the _.template docs to see what the hell is going on.
     var postTemplate = $('#postView').html();
     var postMaker = _.template(postTemplate);
     this.$el.html( postMaker(this.model.toJSON()) );
   }
 });
 
+// This gives us the ability to use routes.
 var router = new Router();
 
 $(document).ready(function () {
+  // Kicks off backbone routing and allows us to use the back arrows.
   Backbone.history.start();
 });
