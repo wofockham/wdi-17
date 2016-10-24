@@ -1,3 +1,4 @@
+lots of        many       spaces
 Fred
 fred
 frederick
@@ -6,3 +7,13 @@ Wilma
 Dino
 Pebbles
 Alfred
+FRED
+Mr. Slate
+Mississippi
+Bamm-Bamm
+llama
+wilma and fred
+wilma, fred
+fred and also wilma
+fred & wilma
+fred&wilma
