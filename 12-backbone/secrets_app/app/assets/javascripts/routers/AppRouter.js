@@ -8,8 +8,5 @@ app.AppRouter = Backbone.Router.extend({
   index: function () {
     var appView = new app.AppView();
     appView.render();
-
-    app.secrets = new app.Secrets();
-    app.secrets.fetch();
   }
 });
