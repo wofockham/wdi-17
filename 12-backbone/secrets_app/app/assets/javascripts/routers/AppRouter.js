@@ -10,11 +10,6 @@ app.AppRouter = Backbone.Router.extend({
     appView.render();
 
     app.secrets = new app.Secrets();
-    app.secrets.fetch().done(function () {
-      app.secrets.each(function (s) {
-        var secretView = new app.SecretView({model: s});
-        secretView.render();
-      });
-    });
+    app.secrets.fetch();
   }
 });

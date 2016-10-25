@@ -5,8 +5,7 @@ app.AppView = Backbone.View.extend({
   render: function () {
     this.$el.html( $('#appView').html() );
 
-    // TODO
-    // var secretInputView = new app.SecretInputView();
-    // secretInputView.render();
+    var secretInputView = new app.SecretInputView();
+    secretInputView.render();
   }
 })
