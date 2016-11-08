@@ -15,4 +15,9 @@ namespace :twitter do
     FactoryGirl.create_list :user_with_tweets, args[:user_count].to_i
     Rake::Task['twitter:stats'].invoke
   end
+
+  desc "Populate the Tweet table with real data"
+  task :search, [:query, :count] => :environment do |t, args|
+    # Your code goes here.
+  end
 end
