@@ -57,11 +57,11 @@
         null,
         null,
         1,
-        0,
+        1,
         null,
         null,
         1,
-        0,
+        1,
         null,
         null,
         null,
@@ -71,11 +71,11 @@
         null,
         null,
         1,
-        0,
+        1,
         null,
         null,
         1,
-        0,
+        1,
         null,
         null,
         null,
@@ -333,6 +333,20 @@
         8,
         null,
         null,
+        null,
+        1,
+        4,
+        4,
+        2,
+        null,
+        2,
+        null,
+        null,
+        null,
+        1,
+        1,
+        4,
+        null,
         null
       ],
       "/Users/inceptor/Projects/wdi-17/09-tdd/fruitstore/app/controllers/application_controller.rb": [
@@ -345,11 +359,12 @@
       "/Users/inceptor/Projects/wdi-17/09-tdd/fruitstore/app/models/fruit.rb": [
         1,
         1,
+        1,
         null,
         null,
         null
       ]
     },
-    "timestamp": 1478655666
+    "timestamp": 1478661738
   }
 }
