@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  padding: 1em;
+  background: green;
+}
+
+.container {
+  height: 300px;
+  background-color: yellow;
+  display: flex;
+  flex-direction: row; /* row-reverse, column, column-reverse */
+  justify-content: space-around;
+}
