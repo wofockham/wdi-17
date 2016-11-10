@@ -10,6 +10,10 @@ When(/^I add them together$/) do
   @result = @calculator.add
 end
 
-Then(/^I should see (\d+) on the terminal$/) do |number|
-  assert_equal @result, number.to_f
+When(/^I subtract them$/) do
+  @result = @calculator.subtract
+end
+
+Then(/^I should see (-?\d+) on the terminal$/) do |number|
+  assert_equal number.to_f, @result
 end

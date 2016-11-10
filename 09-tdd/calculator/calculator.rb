@@ -10,4 +10,8 @@ class Calculator
   def add
     @input.map(&:to_f).inject(&:+)
   end
+
+  def subtract
+    @input.map(&:to_f).inject(&:-)
+  end
 end
