@@ -17,7 +17,8 @@ $(document).ready(function () {
   }
 
   // Paint pixels on mouseover.
-  $('.pixel').on('mouseover', function () {
+  $('#canvas').on('mouseover', '.pixel', function (event) {
+    console.log(event);
     var color = $('.selected').css('background-color');
     $(this).css('background-color', color);
   });
