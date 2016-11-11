@@ -1,0 +1,20 @@
+body {
+  background-image: url(http://placekitten.com/1024/1023);
+  background-size: cover;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.bubble {
+  position: absolute;
+  width: 3em;
+  height: 3em;
+  border-radius: 100%;
+  border: 1px solid blue;
+}
