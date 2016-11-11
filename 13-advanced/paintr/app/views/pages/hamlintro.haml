@@ -1,0 +1,9 @@
+<h1>Random</h1>
+
+%h1.title.advertising#main= Random.rand
+
+%input{:placeholder => 'Your message here...'}
+
+%ul
+  - ['Groucho', 'Harpo', 'Chico'].each do |brother|
+    %li= brother
