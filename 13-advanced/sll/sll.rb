@@ -10,6 +10,10 @@ class SinglyLinkedList
 
   attr_reader :head
 
+  alias first head
+
+  include Enumerable # Mixin
+
   def initialize(start_value=nil)
     @head = Node.new(start_value) unless start_value.nil?
   end
@@ -31,18 +35,20 @@ class SinglyLinkedList
     else
       last_node.next = node
     end
+    self # This enables chaining
   end
 
   def prepend(value)
     node = Node.new value
     node.next = @head
     @head = node
+    self
   end
 
-  def length
+  def length # TODO: Alias this as #count and #size
     tally = 0
     node = @head
-    while node.next
+    while node.respond_to? :next
       node = node.next
       tally += 1
     end
@@ -50,19 +56,34 @@ class SinglyLinkedList
   end
 
   def find(needle)
-    # Return the node containing the needle as its value
+    node = @head
+    until node.nil?
+      return node if node.value == needle
+      node = node.next
+    end
+    nil
   end
 
   def reverse
-    # Returns a new SLL with the nodes in reverse order
+    reverse_list = SinglyLinkedList.new
+    node = @head
+    until node.nil?
+      reverse_list.prepend node.value
+      node = node.next
+    end
+    reverse_list
   end
 
   def reverse!
-    # Tricky but there is a one line solution
+    @head = self.reverse.head
   end
 
   def each
-    # Takes a block and executes it for each value in our SLL.
+    node = @head
+    while node
+      yield node.value if block_given?
+      node = node.next
+    end
   end
 
   # def map
