@@ -6,5 +6,13 @@ def fib(n)
   end
 end
 
-puts fib(7)
+def fib_fast(n, a=1, b=1)
+  if n <= 2 # Base case
+    b
+  else
+    fib_fast(n-1, b, a + b) # We pass in our running totals
+  end
+end
+
+# puts fib(7)
 require 'pry'; binding.pry
