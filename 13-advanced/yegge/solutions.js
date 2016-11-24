@@ -60,7 +60,30 @@ var twelveTimesTables = function () {
 console.log('multiplication');
 twelveTimesTables();
 
+////////////////////////////////////////////////////////////////////////////////
 // Write a function that sums up integers from a text file, one int per line.
+var sumIntegers = function () {
+  var fs = require('fs');
+  var sum = 0;
+  var file = fs.readFileSync('./integers.txt', 'utf-8');
+  file.split('\n').forEach(function (line) {
+    var n = parseInt(line);
+    n && (sum += parseInt(line)); // Only add truthy values.
+  });
+  return sum;
+}
+console.log('sumIntegers', sumIntegers());
+
+////////////////////////////////////////////////////////////////////////////////
 // Write function to print the odd numbers from 1 to 99.
+var oddNumbers = function (n) {
+  if (n === undefined) n = 99;
+  for (var i = 1; i <= n; i += 2) {
+    console.log(i);
+  }
+}
+console.log('oddNumbers');
+oddNumbers();
+
 // Find the largest int value in an int array.
 // Format an RGB value (three 1-byte numbers) as a 6-digit hexadecimal string.
